@@ -34,15 +34,18 @@ For a production build, run `npm run build`. To preview it locally, run `npm run
 ## Source structure
 
 ```text
-career-bloom/
-├── index.html
-├── package.json
-├── README.md
-└── src/
-    ├── main.jsx      # React entry point
-    ├── App.jsx       # App state, sections, components, forms and workflows
-    └── styles.css    # Theme, layout, responsive styles
+src/
+  constants.js            statuses, status colours (single place)
+  lib/                    pure helpers: dates.js, ids.js, applicationRules.js, stars.js
+  data/                   storage.js (only file touching localStorage), seed.js (demo data)
+  hooks/useStore.js       React hook on top of data/storage.js
+  components/ui/          Modal, Field, Badge, SectionTitle
+  features/               applications/, calendar/, todos/, resources/, journey/ (StarJar)
+  App.jsx                 page layout + state wiring (still large; next step: split per feature)
+  styles.css              theme tokens + layout
 ```
+
+Run `npm run format` once to turn the dense code into readable, formatted code. See `CLAUDE.md` for the rules.
 
 ## How the data is connected
 
@@ -71,4 +74,4 @@ The Kanban board uses native HTML drag-and-drop, avoiding an extra dependency. D
 
 ## Backend later
 
-Suggested tables: `applications`, `tasks`, `personal_events`, `resources`, `weekly_goals`, and `application_status_history`. Use stable database IDs and an `application_id` foreign key for linked tasks. Keep application date fields as the source of truth for their calendar events. When adding a backend, replace the LocalStorage `useStore()` persistence hook in `src/App.jsx` with API/database calls while keeping the UI components and date-derivation logic separate.
+Suggested tables: `applications`, `tasks`, `personal_events`, `resources`, `weekly_goals`, and `application_status_history`. Use stable database IDs and an `application_id` foreign key for linked tasks. Keep application date fields as the source of truth for their calendar events. When adding a backend, replace `src/data/storage.js` (and then move to per-record API functions) with API/database calls while keeping the UI components and date-derivation logic separate.
