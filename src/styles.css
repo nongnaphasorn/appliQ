@@ -22,3 +22,9 @@ body{background:radial-gradient(900px 500px at 8% -5%,#ffeccd 0,transparent 60%)
 .chip.personal{background:#eee7f1;border-left-color:#b3a2b9}
 .day .more{display:block;font-size:9px;color:#968673;padding-left:4px}
 @media (max-width:700px){.day{min-height:64px;padding:4px}.chip{font-size:8px;padding:1px 4px}}
+
+/* ===== Calendar day cells: soft rounded look ===== */
+.day{border:1px solid #f6edd3;border-radius:16px;background:#fffdf7;text-align:left;color:#6a513c;display:flex;flex-direction:column;cursor:pointer;box-shadow:0 2px 8px rgba(120,90,40,.05);transition:transform .12s,box-shadow .12s}
+.day:hover{transform:translateY(-1px);box-shadow:0 6px 14px rgba(120,90,40,.1)}
+.day.blank{background:transparent;border-color:transparent;box-shadow:none;transform:none}
+.day>span{font-size:11px;font-weight:600}
