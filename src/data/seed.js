@@ -9,3 +9,20 @@ export const initialApps=[
 {id:'a5',company:'Little Oak Studio',position:'Web Developer Intern',jobType:'Internship',location:'Remote',jobLink:'',status:'Offer',priority:'High',deadline:'',appliedDate:offset(-20),followUpDate:'',interviewDate:offset(-5),testDate:'',expectedResultDate:today(),nextAction:'Review offer details',actionDate:today(),eligibility:'',requiredDocs:'Resume, Portfolio',hrContact:'',notes:'Compare stipend and start date before responding.'}
 ];
 export const initTasks=[{id:'t1',title:'Update resume summary',dueDate:today(),done:false,priority:'Medium',applicationId:'a1'},{id:'t2',title:'Prepare interview examples',dueDate:offset(1),done:false,priority:'Medium',applicationId:'a3'},{id:'t3',title:'Review technical test brief',dueDate:offset(3),done:false,priority:'Medium',applicationId:'a4'}];
+
+// Resume facts. Contact/links are left blank on purpose: type them in the Profile page
+// (kept in the browser/DB, not in source code, so they do not end up in a public repo).
+export const initialProfile = {
+  name: 'Nongnaphasorn Chumchoosri',
+  summary: '3rd-year Digital Engineering student (Application Software Development track). Seeking a software development internship.',
+  university: 'Sirindhorn International Institute of Technology (SIIT), Thammasat University',
+  degree: 'B.Eng. Digital Engineering (Software Major)',
+  years: '2024 – Present',
+  gpa: '2.97',
+  highSchool: "The Prince Royal's College (graduated 2024)",
+  highSchoolGpa: '3.25',
+  languages: 'Thai (Native), English (IELTS 6.5)',
+  hardSkills: ['Python', 'Java', 'SQL', 'JavaScript (Node.js)', 'Express.js', 'REST APIs', 'MySQL', 'Git/GitHub (basic)', 'Postman', 'Docker (basic)', 'Figma', 'Wireshark', 'MS Excel', 'VS Code', 'Jupyter / Colab'],
+  softSkills: [],
+  email: '', phone: '', linkedin: '', github: '', portfolio: '',
+};
