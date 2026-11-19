@@ -1,4 +1,4 @@
-# Career Bloom — React starter project
+# AppliQ — React starter project
 
 A single-user job and internship application tracker. This is a real React frontend project with browser LocalStorage persistence. It has no login, backend, or Supabase dependency.
 
@@ -24,7 +24,7 @@ Install Node.js 18+ (npm is included with Node.js).
 ## Run the project
 
 1. Extract the ZIP file.
-2. Open a terminal in the `career-bloom` folder.
+2. Open a terminal in the `appliq` folder.
 3. Run `npm install`.
 4. Run `npm run dev`.
 5. Open the local address printed by Vite, usually `http://localhost:5173`.

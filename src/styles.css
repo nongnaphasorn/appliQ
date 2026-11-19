@@ -62,3 +62,8 @@ body{background:radial-gradient(900px 500px at 8% -5%,#ffeccd 0,transparent 60%)
 .urg.urgent{background:#fde3d3;color:#b0562a}
 .urg.overdue{background:#f9d9d9;color:#a3453b}
 .urg.none{background:transparent;color:#b0a38f}
+
+/* ===== AppliQ logo ===== */
+.logo{display:inline-flex;align-items:center;gap:2px}
+.logo-word{font:700 25px 'DM Sans',sans-serif;font-style:normal;letter-spacing:-1px;color:#70737f}
+.flower-art{color:#f0cf7a}

@@ -1,4 +1,4 @@
-# Rules for Career Bloom (give this file to any AI before it edits code)
+# Rules for AppliQ (give this file to any AI before it edits code)
 
 ## Architecture (layers, top to bottom)
 - `features/*`, `components/ui/*`  -> UI only: show data, handle clicks. No business rules.
