@@ -40,7 +40,7 @@ src/
   data/                   storage.js (only file touching localStorage), seed.js (demo data)
   hooks/useStore.js       React hook on top of data/storage.js
   components/ui/          Modal, Field, Badge, SectionTitle
-  features/               applications/, calendar/, todos/, resources/, journey/ (StarJar)
+  features/               applications/, calendar/, todos/, resources/
   App.jsx                 page layout + state wiring (still large; next step: split per feature)
   styles.css              theme tokens + layout
 ```
