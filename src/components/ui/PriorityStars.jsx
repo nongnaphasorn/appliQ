@@ -5,7 +5,7 @@ import { priorityLevel } from '../../lib/priority.js';
 export default function PriorityStars({ level }) {
   const n = priorityLevel(level);
   return (
-    <span className="pstars" title={(level || 'Medium') + ' priority'}>
+    <span className="pstars" style={{ display: 'inline-flex', gap: 1, verticalAlign: 'middle' }} title={(level || 'Medium') + ' priority'}>
       {[1, 2, 3].map((i) => (
         <i key={i} className={i <= n ? 'on' : ''}>★</i>
       ))}

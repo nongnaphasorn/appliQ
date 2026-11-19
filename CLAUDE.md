@@ -11,6 +11,8 @@
 - Application dates are the single source of truth. Calendar events and stars are DERIVED, never stored.
 - Status names live only in `src/constants.js`. Do not retype status lists elsewhere.
 
+- `priority` in stored data means INTEREST (how much I want it, shown as 1-3 stars). Urgency is DERIVED from dates (`lib/urgency.js`), never stored.
+
 ## Working rules
 - Change only what I ask. Do not refactor unrelated files.
 - If a change touches more than 3 files, stop and show the plan first.
