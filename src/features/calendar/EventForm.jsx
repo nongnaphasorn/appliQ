@@ -1,0 +1,4 @@
+import React,{useState} from 'react';
+import Field from '../../components/ui/Field.jsx';
+
+export default function EventForm({initial,onSave,onClose}){const [f,setF]=useState(initial);return <form onSubmit={e=>{e.preventDefault();if(f.title.trim()&&f.date)onSave(f)}}><Field label="Event title"><input required value={f.title} onChange={e=>setF({...f,title:e.target.value})}/></Field><Field label="Date"><input required type="date" value={f.date} onChange={e=>setF({...f,date:e.target.value})}/></Field><Field label="Type"><select value={f.type} onChange={e=>setF({...f,type:e.target.value})}><option>Personal</option><option>Networking</option><option>Reminder</option></select></Field><Field label="Notes"><textarea value={f.notes} onChange={e=>setF({...f,notes:e.target.value})}/></Field><div className="modal-actions"><button type="button" className="secondary" onClick={onClose}>Cancel</button><button className="primary">Save event</button></div></form>}

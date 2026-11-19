@@ -1,0 +1,5 @@
+import React from 'react';
+import {today} from '../../lib/dates.js';
+import {eventClass} from '../../lib/applicationRules.js';
+
+export default function Calendar({month,selected,onSelect,events}){let first=new Date(month.getFullYear(),month.getMonth(),1),offset=(first.getDay()+6)%7,n=new Date(month.getFullYear(),month.getMonth()+1,0).getDate(),cells=Array.from({length:Math.ceil((offset+n)/7)*7},(_,i)=>i-offset+1);return <div className="cal-grid">{['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(x=><div className="weekday" key={x}>{x}</div>)}{cells.map((d,i)=>{let valid=d>0&&d<=n,iso=valid?`${month.getFullYear()}-${String(month.getMonth()+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`:'',ev=events.filter(e=>e.date===iso);return <button key={i} disabled={!valid} className={'day '+(!valid?'blank ':'')+(iso===today()?'today-day ':'')+(iso===selected?'selected':'')} onClick={()=>valid&&onSelect(iso)}><span>{valid?d:''}</span><div>{ev.slice(0,3).map(e=><i key={e.id} className={'dot '+eventClass(e.type)}/>)}</div>{ev.length>0&&<small>{ev.length} event{ev.length>1?'s':''}</small>}</button>})}</div>}
