@@ -35,17 +35,23 @@ For a production build, run `npm run build`. To preview it locally, run `npm run
 
 ```text
 src/
-  constants.js            statuses, status colours (single place)
-  lib/                    pure helpers: dates.js, ids.js, applicationRules.js, stars.js
-  data/                   storage.js (only file touching localStorage), seed.js (demo data)
+  constants.js            statuses, status groups (TO_APPLY / SENT / CLOSED), colours
+  lib/                    pure helpers: dates, ids, applicationRules, statusRules, urgency, priority, backup
+  data/                   storage.js (ONLY file touching localStorage), seed.js (demo data)
   hooks/useStore.js       React hook on top of data/storage.js
-  components/ui/          Modal, Field, Badge, SectionTitle
-  features/               applications/, calendar/, todos/, resources/
-  App.jsx                 page layout + state wiring (still large; next step: split per feature)
-  styles.css              theme tokens + layout
+  components/ui/          Modal, Field, Badge, SectionTitle, PriorityStars, Urgency, Logo
+  features/
+    applications/         ApplicationsTable, ApplicationDetail, ApplicationForm, GpaNote
+    kanban/               KanbanBoard, ConfirmMove
+    calendar/             Calendar, EventForm
+    todos/                TodoWidget, TaskForm
+    dashboard/            StatsOverview
+    resources/            ResourcesSection, ResourceForm
+    profile/              ProfileSection, ProfileForm
+  App.jsx                 layout + state wiring + handlers (calendar/overview still lives here)
 ```
 
-Run `npm run format` once to turn the dense code into readable, formatted code. See `CLAUDE.md` for the rules.
+Run `npm run format` once to make the dense code readable. Rules for AI helpers: see `CLAUDE.md`. Backend plan: see `docs/HANDOFF.md`.
 
 ## How the data is connected
 
