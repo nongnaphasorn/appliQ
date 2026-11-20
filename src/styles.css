@@ -67,3 +67,11 @@ body{background:radial-gradient(900px 500px at 8% -5%,#ffeccd 0,transparent 60%)
 .logo{display:inline-flex;align-items:center;gap:2px}
 .logo-word{font:700 25px 'DM Sans',sans-serif;font-style:normal;letter-spacing:-1px;color:#70737f}
 .flower-art{color:#f0cf7a}
+
+/* ===== To-do: edit/delete/done ===== */
+.todo{display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:10px}
+.todo-actions{display:flex;gap:2px;opacity:.55}
+.todo:hover .todo-actions{opacity:1}
+.todo.done b{text-decoration:line-through;opacity:.55}
+.todo.done .check{background:#f5d77a;border-color:#f5d77a}
+.todo-list{max-height:360px;overflow:auto}
